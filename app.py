@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return "hello"
+    return "Hello from your WSGI server"
 
 
 if __name__ == '__main__':

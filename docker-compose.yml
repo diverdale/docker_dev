@@ -29,7 +29,7 @@ services:
       - management
 
   wsgi:
-    image: diverdale/docker_dev_wsgi
+    image: docker_dev_wsgi
     stdin_open: true
     tty: true
     networks:
