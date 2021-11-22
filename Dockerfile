@@ -6,4 +6,4 @@ WORKDIR /app
 ADD . /app
 
 RUN python3 -m pip install -r requirements.txt
-CMD ["bash", "run-gunicorn"]
+CMD ["bash", "run-gunicorn.sh"]

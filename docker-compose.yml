@@ -27,3 +27,12 @@ services:
     tty: true
     networks:
       - management
+
+  wsgi:
+    image: diverdale/docker_dev_wsgi
+    stdin_open: true
+    tty: true
+    networks:
+      - management
+    ports:
+      - 5000:5000
