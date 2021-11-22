@@ -4,19 +4,26 @@ networks:
     ipam:
       driver: default
       config:
-        - subnet: 172.18.0.0/16
-          gateway: 172.18.0.1
+        - subnet: 172.19.0.0/16
+          gateway: 172.19.0.1
 
 services:
   mariadb:
     image: mariadb
     restart: always
     environment:
-      MARIADB_ROOT_PASSWORD: 'cisco123'
-      MARIADB_DATABASE: 'dnac'
+      MARIADB_ROOT_PASSWORD: 'password123'
+      MARIADB_DATABASE: 'dev_test'
     ports:
       - 3306:3306
     networks:
       - management
     volumes:
-      - /Users/dale/data:/var/lib/mysql
+      - /Users/dale/data/dev_test:/var/lib/mysql
+
+  linux:
+    image: diverdale/alpine_mysql_client
+    stdin_open: true
+    tty: true
+    networks:
+      - management
