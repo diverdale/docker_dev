@@ -1,0 +1,22 @@
+networks:
+  management:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.18.0.0/16
+          gateway: 172.18.0.1
+
+services:
+  mariadb:
+    image: mariadb
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: 'cisco123'
+      MARIADB_DATABASE: 'dnac'
+    ports:
+      - 3306:3306
+    networks:
+      - management
+    volumes:
+      - /Users/dale/data:/var/lib/mysql
