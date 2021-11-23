@@ -8,10 +8,11 @@ You will need to edit the `.env` file to match your storage location.
 The `aliases` file is just a small collection of commands to make life easier. You can just `source` the file and go.
 
 The workflow to get up and running would be the following:
-```
+```shell
 source aliases.sh
 build
 start
 ```
 That should get you the basic `Welcome` message. Each time you make changes in the app, you will need to run `build` again and restat the `WSGI` container.
+
 
